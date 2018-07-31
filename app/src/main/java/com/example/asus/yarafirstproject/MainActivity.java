@@ -2,6 +2,7 @@ package com.example.asus.yarafirstproject;
 
 
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // navigation drawer listener
         dl = findViewById(R.id.activity_main);
         t = new ActionBarDrawerToggle(this, dl,R.string.Open, R.string.Close);
 
@@ -33,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-                switch(id)
+                switch(item.getItemId())
                 {
                     case R.id.profile_nd:
                         Toast.makeText(MainActivity.this, "پروفایل کاربر",Toast.LENGTH_SHORT).show();
@@ -47,6 +48,26 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        // bottom navigation listener
+        BottomNavigationView bnv = findViewById(R.id.bottom_navigation);
+
+        bnv.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.favorites_bn:
+                                Toast.makeText(MainActivity.this, "دسته بندی ها", Toast.LENGTH_SHORT).show();
+                            case R.id.login_bn:
+                                Toast.makeText(MainActivity.this, "صفحه اصلی", Toast.LENGTH_SHORT).show();
+                        }
+                        return true;
+                    }
+        });
+
+
 
     }
 

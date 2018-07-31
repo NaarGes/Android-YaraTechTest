@@ -7,4 +7,6 @@
     <string name="Close">Close</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="nav_header_title">نام کاربر</string>
+    <string name="category">دسته بندی ها</string>
+    <string name="register">صفحه اصلی</string>
 </resources>
