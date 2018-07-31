@@ -19,7 +19,7 @@ public class DeveloperInformationActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.developer, AboutFragment.newInstance()).commit();
                 break;
             case "contact":
-                // todo
+                getSupportFragmentManager().beginTransaction().replace(R.id.developer, ContactFragment.newInstance()).commit();
                 break;
         }
 
