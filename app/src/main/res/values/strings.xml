@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Yara First Project</string>
+    <string name="profile">پروفایل</string>
+    <string name="about">درباره ما</string>
+    <string name="contact">ارتباط با ما</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_title">نام کاربر</string>
+</resources>
