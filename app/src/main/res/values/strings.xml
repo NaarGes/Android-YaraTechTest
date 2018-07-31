@@ -18,4 +18,5 @@
     <string name="email_string">ایمیل</string>
     <string name="login_string">ورود</string>
     <string name="cancel_string">انصراف</string>
+    <string name="about_text">نرگس صادقی \n کارآموز برنامه نویسی اندروید شرکت یارا \n تابستان سال 1397</string>
 </resources>

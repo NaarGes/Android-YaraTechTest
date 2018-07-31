@@ -1,6 +1,6 @@
 package com.example.asus.yarafirstproject;
 
-
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
@@ -32,21 +32,29 @@ public class MainActivity extends AppCompatActivity {
         dl.addDrawerListener(t);
         t.syncState();
 
+        // FIXME RTL actionbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         nv = findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                //todo don't use anonymous class
+                Intent i = new Intent(MainActivity.this, DeveloperInformationActivity.class);
+
                 switch (item.getItemId()) {
                     case R.id.profile_nd:
                         Toast.makeText(MainActivity.this, "پروفایل کاربر", Toast.LENGTH_SHORT).show();
                         return true;
-                    case R.id.contact_nd:
-                        Toast.makeText(MainActivity.this, "درباره ما", Toast.LENGTH_SHORT).show();
-                        return true;
                     case R.id.about_nd:
-                        Toast.makeText(MainActivity.this, "تماس با ما", Toast.LENGTH_SHORT).show();
+                        //FIXME close drawer
+                        i.putExtra("fragment", "about");
+                        startActivity(i);
+                        return true;
+                    case R.id.contact_nd:
+                        //FIXME close drawer
+                        i.putExtra("fragment", "contact");
+                        startActivity(i);
                         return true;
                     default:
                         return false;
