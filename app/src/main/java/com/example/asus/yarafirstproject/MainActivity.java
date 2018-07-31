@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
+    private CategoryFragment cf;
+    private RegisterFragment rf;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         // navigation drawer listener
         dl = findViewById(R.id.activity_main);
-        t = new ActionBarDrawerToggle(this, dl,R.string.Open, R.string.Close);
+        t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
 
         dl.addDrawerListener(t);
         t.syncState();
@@ -35,46 +38,56 @@ public class MainActivity extends AppCompatActivity {
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.profile_nd:
-                        Toast.makeText(MainActivity.this, "پروفایل کاربر",Toast.LENGTH_SHORT).show();
-                    case R.id.contact_nd:
-                        Toast.makeText(MainActivity.this, "درباره ما",Toast.LENGTH_SHORT).show();
-                    case R.id.about_nd:
-                        Toast.makeText(MainActivity.this, "تماس با ما",Toast.LENGTH_SHORT).show();
-                    default:
+                        Toast.makeText(MainActivity.this, "پروفایل کاربر", Toast.LENGTH_SHORT).show();
                         return true;
+                    case R.id.contact_nd:
+                        Toast.makeText(MainActivity.this, "درباره ما", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.about_nd:
+                        Toast.makeText(MainActivity.this, "تماس با ما", Toast.LENGTH_SHORT).show();
+                        return true;
+                    default:
+                        return false;
                 }
             }
         });
 
 
         // bottom navigation listener
+
+        cf = CategoryFragment.newInstance();
+        rf = RegisterFragment.newInstance();
+
+        // show category fragment in start
+        getSupportFragmentManager().beginTransaction().replace(R.id.content, cf).commit();
+
         BottomNavigationView bnv = findViewById(R.id.bottom_navigation);
 
         bnv.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
                         switch (item.getItemId()) {
                             case R.id.favorites_bn:
-                                Toast.makeText(MainActivity.this, "دسته بندی ها", Toast.LENGTH_SHORT).show();
+                                fm.beginTransaction().replace(R.id.content, cf).commit();
+                                return true;
                             case R.id.login_bn:
-                                Toast.makeText(MainActivity.this, "صفحه اصلی", Toast.LENGTH_SHORT).show();
+                                fm.beginTransaction().replace(R.id.content, rf).commit();
+                                return true;
+                            default:
+                                return false;
                         }
-                        return true;
                     }
-        });
-
-
-
+                });
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if(t.onOptionsItemSelected(item))
+        if (t.onOptionsItemSelected(item))
             return true;
 
         return super.onOptionsItemSelected(item);
