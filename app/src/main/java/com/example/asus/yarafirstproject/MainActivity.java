@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+// FIXME close drawer by back button
+
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout dl;
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                //todo don't use anonymous class
+                //TODO don't use anonymous class
                 Intent i = new Intent(MainActivity.this, DeveloperInformationActivity.class);
 
                 switch (item.getItemId()) {
@@ -68,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
         cf = CategoryFragment.newInstance();
         rf = RegisterFragment.newInstance();
 
-        // show category fragment in start
-        getSupportFragmentManager().beginTransaction().replace(R.id.content, cf).commit();
+        // TODO show category fragment in start, handle landscape mode
+        //getSupportFragmentManager().beginTransaction().replace(R.id.content, cf).commit();
 
         BottomNavigationView bnv = findViewById(R.id.bottom_navigation);
 
