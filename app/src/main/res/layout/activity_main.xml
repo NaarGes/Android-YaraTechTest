@@ -29,7 +29,6 @@
             app:itemTextColor="@drawable/nav_item_color_state"
             app:menu="@menu/bottom_navigation_menu" />
 
-
     </RelativeLayout>
 
     <android.support.design.widget.NavigationView

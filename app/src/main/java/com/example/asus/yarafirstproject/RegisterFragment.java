@@ -12,12 +12,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.asus.yarafirstproject.form.FormActivity;
 
 import org.parceler.Parcels;
 
 public class RegisterFragment extends Fragment {
 
     Button login;
+    Button form;
     EditText name;
     EditText family;
     EditText email;
@@ -31,6 +33,7 @@ public class RegisterFragment extends Fragment {
         Glide.with(this).load("http://yaramobile.com/templates/sj_hexagon/images/styling/blue/logo.png").into(imageView);
 
         login = root.findViewById(R.id.login_user);
+        form = root.findViewById(R.id.form_button);
         name = root.findViewById(R.id.name);
         family = root.findViewById(R.id.family);
         email = root.findViewById(R.id.email);
@@ -46,6 +49,17 @@ public class RegisterFragment extends Fragment {
             }
         });
 
+        form.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), FormActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+
         return root;
     }
 
@@ -57,4 +71,6 @@ public class RegisterFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
+
 }

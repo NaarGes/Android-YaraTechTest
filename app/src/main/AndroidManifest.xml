@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".InfoActivity" />
-        <activity android:name=".DeveloperInformationActivity"></activity>
+        <activity android:name=".DeveloperInformationActivity" />
+        <activity android:name=".form.FormActivity"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package com.example.asus.yarafirstproject;
 
+// FIXME about and contact in main activity
+
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -62,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         // bottom navigation listener
 
