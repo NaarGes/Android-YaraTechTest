@@ -3,6 +3,7 @@ package com.example.asus.yarafirstproject;
 // FIXME about and contact in main activity
 // FIXME bottom navigation active and inactive
 
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         categoryFragment = CategoryFragment.newInstance();
         registerFragment = RegisterFragment.newInstance();
 
-        // TODO handle landscape mode
+
         getSupportFragmentManager().beginTransaction().replace(R.id.content, registerFragment).commit();
 
         BottomNavigationView bnv = findViewById(R.id.bottom_navigation);
@@ -96,16 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        if (t.onOptionsItemSelected(item))
-            return true;
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
+    // close the drawer if opened when back button tapped
     @Override
     public void onBackPressed() {
         if (this.dl.isDrawerOpen(GravityCompat.START)) {
@@ -114,4 +106,5 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
 }
