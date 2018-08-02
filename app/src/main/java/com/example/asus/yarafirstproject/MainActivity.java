@@ -1,8 +1,8 @@
 package com.example.asus.yarafirstproject;
 
 // FIXME about and contact in main activity
+// FIXME bottom navigation active and inactive
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
@@ -20,8 +20,10 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
-    private CategoryFragment cf;
-    private RegisterFragment rf;
+    private CategoryFragment categoryFragment;
+    private RegisterFragment registerFragment;
+    private AboutFragment aboutFragment;
+    private ContactFragment contactFragment;
 
 
     @Override
@@ -44,21 +46,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 //TODO don't use anonymous class
-                Intent i = new Intent(MainActivity.this, DeveloperInformationActivity.class);
+                aboutFragment = AboutFragment.newInstance();
+                contactFragment = ContactFragment.newInstance();
 
                 switch (item.getItemId()) {
                     case R.id.profile_nd:
                         Toast.makeText(MainActivity.this, "پروفایل کاربر", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.about_nd:
-                        //FIXME close drawer
-                        i.putExtra("fragment", "about");
-                        startActivity(i);
+                        dl.closeDrawer(GravityCompat.START);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.content, aboutFragment).commit();
                         return true;
                     case R.id.contact_nd:
-                        //FIXME close drawer
-                        i.putExtra("fragment", "contact");
-                        startActivity(i);
+                        dl.closeDrawer(GravityCompat.START);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.content, contactFragment).commit();
                         return true;
                     default:
                         return false;
@@ -68,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
 
         // bottom navigation listener
 
-        cf = CategoryFragment.newInstance();
-        rf = RegisterFragment.newInstance();
+        categoryFragment = CategoryFragment.newInstance();
+        registerFragment = RegisterFragment.newInstance();
 
         // TODO show category fragment in start, handle landscape mode
         //getSupportFragmentManager().beginTransaction().replace(R.id.content, cf).commit();
@@ -83,10 +84,10 @@ public class MainActivity extends AppCompatActivity {
                         android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
                         switch (item.getItemId()) {
                             case R.id.favorites_bn:
-                                fm.beginTransaction().replace(R.id.content, cf).commit();
+                                fm.beginTransaction().replace(R.id.content, categoryFragment).commit();
                                 return true;
                             case R.id.login_bn:
-                                fm.beginTransaction().replace(R.id.content, rf).commit();
+                                fm.beginTransaction().replace(R.id.content, registerFragment).commit();
                                 return true;
                             default:
                                 return false;
