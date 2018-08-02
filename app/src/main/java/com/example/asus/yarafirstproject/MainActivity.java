@@ -72,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
         categoryFragment = CategoryFragment.newInstance();
         registerFragment = RegisterFragment.newInstance();
 
-        // TODO show category fragment in start, handle landscape mode
-        //getSupportFragmentManager().beginTransaction().replace(R.id.content, cf).commit();
+        // TODO handle landscape mode
+        getSupportFragmentManager().beginTransaction().replace(R.id.content, registerFragment).commit();
 
         BottomNavigationView bnv = findViewById(R.id.bottom_navigation);
 
