@@ -4,83 +4,52 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center|top"
-    android:paddingTop="30dp"
-    android:paddingRight="30dp"
+    android:padding="@dimen/app_border"
     tools:context="com.example.asus.yarafirstproject.AboutFragment">
 
     <!-- TODO make links clickable -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_developer"
+        android:textSize="@dimen/header_font_size"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/app_border"/>
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:drawableStart="@drawable/ic_mail"
+        android:text="@string/developer_email"
+        android:padding="@dimen/app_border"
+        android:drawablePadding="@dimen/app_border"
+        />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_mail"
-            android:padding="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="nargessadeghi@ut.ac.ir"
-            android:padding="10dp"/>
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:drawableStart="@drawable/ic_github_character"
+        android:text="@string/developer_github"
+        android:padding="@dimen/app_border"
+        android:drawablePadding="@dimen/app_border"
+        />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_github_character"
-            android:padding="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="github.com/NaarGes"
-            android:padding="10dp"/>
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:drawableStart="@drawable/ic_linkedin"
+        android:text="@string/developer_linkedin"
+        android:padding="@dimen/app_border"
+        android:drawablePadding="@dimen/app_border"
+        />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_linkedin"
-            android:padding="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="linkedin.com/in/nargessadeghi"
-            android:padding="10dp"/>
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_telegram_logo"
-            android:padding="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="t.me/NnargessS"
-            android:padding="10dp"/>
-    </LinearLayout>
-
+        android:drawableStart="@drawable/ic_telegram_logo"
+        android:text="@string/developer_telegram"
+        android:padding="@dimen/app_border"
+        android:drawablePadding="@dimen/app_border"
+        />
 
 </LinearLayout>

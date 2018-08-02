@@ -7,14 +7,15 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:isScrollContainer="false">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center|top"
             android:layout_margin="@dimen/app_border"
-            android:paddingBottom="80dp"
+            android:paddingBottom="100dp"
             android:focusable="true"
             android:focusableInTouchMode="true">
 
@@ -27,12 +28,14 @@
                 android:layout_marginRight="@dimen/defaultMargin"
                 android:layout_marginStart="@dimen/defaultMargin"
                 android:layout_marginTop="@dimen/logo_margin"
-                android:layout_marginBottom="@dimen/logo_margin"/>
+                android:layout_marginBottom="@dimen/logo_margin"
+                android:contentDescription="@string/yara_logo"/>
 
             <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
                 android:layout_marginEnd="@dimen/defaultMargin"
                 android:layout_marginLeft="@dimen/defaultMargin"
                 android:layout_marginRight="@dimen/defaultMargin"
@@ -44,6 +47,7 @@
                 android:id="@+id/family"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
                 android:layout_marginEnd="@dimen/defaultMargin"
                 android:layout_marginLeft="@dimen/defaultMargin"
                 android:layout_marginRight="@dimen/defaultMargin"
@@ -55,6 +59,7 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
                 android:layout_marginEnd="@dimen/defaultMargin"
                 android:layout_marginLeft="@dimen/defaultMargin"
                 android:layout_marginRight="@dimen/defaultMargin"
@@ -72,7 +77,6 @@
                     android:id="@+id/login_user"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/defaultMargin"
                     android:layout_marginStart="@dimen/defaultMargin"
                     android:layout_marginTop="@dimen/defaultMargin"
                     android:text="@string/login_string" />
@@ -82,7 +86,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/defaultMargin"
-                    android:layout_marginRight="@dimen/defaultMargin"
                     android:layout_marginTop="@dimen/defaultMargin"
                     android:text="@string/cancel_string" />
 
@@ -92,7 +95,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/form_button"
-                android:text="@string/show_form"
+                android:layout_marginTop="@dimen/app_border"
+                android:text="@string/show_form_activity"
                 />
         </LinearLayout>
     </ScrollView>

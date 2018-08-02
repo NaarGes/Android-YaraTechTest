@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Yara First Project</string>
+    <string name="app_name">یاراتیوب</string>
     <string name="profile">پروفایل</string>
     <string name="about">درباره ما</string>
     <string name="contact">ارتباط با ما</string>
@@ -17,8 +17,14 @@
     <string name="login_string">ورود</string>
     <string name="cancel_string">انصراف</string>
     <string name="about_text">نرگس صادقی \n کارآموز برنامه نویسی اندروید شرکت یارا \n تابستان سال 1397</string>
-    <string name="show_form">مشاهده فرم</string>
+    <string name="show_form_activity">فرم</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="developer_email">nargessadeghi@ut.ac.ir</string>
+    <string name="developer_github">github.com/NaarGes</string>
+    <string name="developer_linkedin">linkedin.com/in/nargessadeghi</string>
+    <string name="developer_telegram">t.me/NnargessS</string>
+
+    <string name="yara_logo">Yara Logo</string>
+    <string name="contact_developer">ارتباط با توسعه دهنده</string>
+    <string name="about_developer">درباره توسعه دهنده</string>
 </resources>
