@@ -1,9 +1,7 @@
 package com.example.asus.yarafirstproject;
 
-// FIXME about and contact in main activity
 // FIXME bottom navigation active and inactive
 
-import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
@@ -18,9 +16,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DrawerLayout dl;
-    private ActionBarDrawerToggle t;
-    private NavigationView nv;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
     private CategoryFragment categoryFragment;
     private RegisterFragment registerFragment;
     private AboutFragment aboutFragment;
@@ -36,30 +33,29 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // navigation drawer listener
-        dl = findViewById(R.id.activity_main);
-        t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
+        drawerLayout = findViewById(R.id.activity_main);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.Open, R.string.Close);
 
-        dl.addDrawerListener(t);
-        t.syncState();
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
 
-        nv = findViewById(R.id.nv);
-        nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        NavigationView navigationView = findViewById(R.id.nv);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                //TODO don't use anonymous class
+
                 aboutFragment = AboutFragment.newInstance();
                 contactFragment = ContactFragment.newInstance();
 
+                drawerLayout.closeDrawers();
                 switch (item.getItemId()) {
                     case R.id.profile_nd:
                         Toast.makeText(MainActivity.this, "پروفایل کاربر", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.about_nd:
-                        dl.closeDrawer(GravityCompat.START);
                         getSupportFragmentManager().beginTransaction().replace(R.id.content, aboutFragment).commit();
                         return true;
                     case R.id.contact_nd:
-                        dl.closeDrawer(GravityCompat.START);
                         getSupportFragmentManager().beginTransaction().replace(R.id.content, contactFragment).commit();
                         return true;
                     default:
@@ -97,11 +93,17 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    // hamburger menu work
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return (actionBarDrawerToggle.onOptionsItemSelected(item)) || super.onOptionsItemSelected(item);
+    }
+
     // close the drawer if opened when back button tapped
     @Override
     public void onBackPressed() {
-        if (this.dl.isDrawerOpen(GravityCompat.START)) {
-            this.dl.closeDrawer(GravityCompat.START);
+        if (this.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            this.drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }

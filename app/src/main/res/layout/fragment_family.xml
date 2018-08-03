@@ -8,6 +8,7 @@
         android:id="@+id/family_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="نام خانوادگی"/>
+        android:hint="@string/family_string"
+        android:inputType="text"/>
 
 </FrameLayout>

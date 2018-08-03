@@ -9,9 +9,10 @@ import com.example.asus.yarafirstproject.R;
 
 public class FormActivity extends AppCompatActivity implements FragmentsInterface {
 
-    String fname;
-    String lname;
+    String firstName;
+    String lastName;
 
+    // FIXME landscape mode creates fragments (saveState)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,21 +24,20 @@ public class FormActivity extends AppCompatActivity implements FragmentsInterfac
 
         getSupportFragmentManager().beginTransaction().add(R.id.family_f, familyFragment).commit();
         getSupportFragmentManager().beginTransaction().add(R.id.submit_f, submitFragment).commit();
-
         getSupportFragmentManager().beginTransaction().add(R.id.name_f, nameFragment).commit();
     }
 
     @Override
     public void onSetText(String type, String value) {
         if(type.equals("name")){
-            fname = value;
+            firstName = value;
         } else if(type.equals("family")) {
-            lname = value;
+            lastName = value;
         }
     }
 
     @Override
     public void onSubmit() {
-        Toast.makeText(this, fname + " " + lname, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, firstName + " " + lastName, Toast.LENGTH_SHORT).show();
     }
 }

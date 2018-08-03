@@ -18,7 +18,7 @@ import com.example.asus.yarafirstproject.R;
 public class NameFragment extends Fragment {
 
     FragmentsInterface fragmentsInterface;
-    EditText fname;
+    EditText firstName;
 
     public NameFragment() {
         // Required empty public constructor
@@ -30,7 +30,6 @@ public class NameFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
 
     @Override
     public void onAttach(Context context) {
@@ -45,27 +44,22 @@ public class NameFragment extends Fragment {
         return root;
     }
 
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        fname = view.findViewById(R.id.name_et);
-        fname.addTextChangedListener(new TextWatcher() {
+        firstName = view.findViewById(R.id.name_et);
+        firstName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                fragmentsInterface.onSetText("name", fname.getText().toString());
-
+                fragmentsInterface.onSetText("name", firstName.getText().toString());
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-
-
             }
         });
     }

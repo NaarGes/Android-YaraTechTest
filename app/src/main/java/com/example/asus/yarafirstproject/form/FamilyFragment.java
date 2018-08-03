@@ -18,7 +18,7 @@ import com.example.asus.yarafirstproject.R;
 public class FamilyFragment extends Fragment {
 
     FragmentsInterface fragmentsInterface;
-    EditText lname;
+    EditText lastName;
 
     public FamilyFragment() {
         // Required empty public constructor
@@ -48,15 +48,15 @@ public class FamilyFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        lname = view.findViewById(R.id.family_et);
-        lname.addTextChangedListener(new TextWatcher() {
+        lastName = view.findViewById(R.id.family_et);
+        lastName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                fragmentsInterface.onSetText("family", lname.getText().toString());
+                fragmentsInterface.onSetText("family", lastName.getText().toString());
             }
 
             @Override

@@ -19,12 +19,15 @@ public class InfoActivity extends AppCompatActivity {
 
         User user = Parcels.unwrap(i.getParcelableExtra("user"));
 
-        TextView name = (TextView) findViewById(R.id.name_tv);
-        TextView family = (TextView) findViewById(R.id.family_tv);
-        TextView email = (TextView) findViewById(R.id.email_tv);
+        TextView name = findViewById(R.id.name_tv);
+        TextView family = findViewById(R.id.family_tv);
+        TextView email = findViewById(R.id.email_tv);
 
-        name.setText("نام: " + user.getName());
-        family.setText("نام خانوادگی:" + user.getFamily());
-        email.setText("ایمیل:" + user.getEmail());
+        String namePlaceHolder = "نام: " + user.getName();
+        String familyPlaceHolder = "نام خانوادگی:" + user.getFamily();
+        String emailPlaceHolder = "ایمیل:" + user.getEmail();
+        name.setText(namePlaceHolder);
+        family.setText(familyPlaceHolder);
+        email.setText(emailPlaceHolder);
     }
 }
