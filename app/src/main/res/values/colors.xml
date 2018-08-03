@@ -2,8 +2,8 @@
 <resources>
     <color name="colorPrimary">#009999</color>
     <color name="colorPrimaryDark">#006060</color>
+    <color name="colorPrimaryLight">#6ababa</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000</color>
-    <color name="drawerHeader">#6ababa</color>
     <color name="white">#fff</color>
 </resources>

@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".InfoActivity" />
-        <activity android:name=".form.FormActivity"></activity>
+        <activity android:name=".form.FormActivity"/>
     </application>
 
 </manifest>

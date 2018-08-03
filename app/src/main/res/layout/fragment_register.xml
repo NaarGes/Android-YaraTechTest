@@ -27,8 +27,8 @@
                 android:layout_marginLeft="@dimen/defaultMargin"
                 android:layout_marginRight="@dimen/defaultMargin"
                 android:layout_marginStart="@dimen/defaultMargin"
-                android:layout_marginTop="@dimen/logo_margin"
-                android:layout_marginBottom="@dimen/logo_margin"
+                android:layout_marginTop="@dimen/margin_25dp"
+                android:layout_marginBottom="@dimen/margin_25dp"
                 android:contentDescription="@string/yara_logo"/>
 
             <EditText
