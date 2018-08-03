@@ -6,9 +6,10 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="defaultMargin">8dp</dimen>
     <dimen name="logo_width">250dp</dimen>
-    <dimen name="logo_margin">25dp</dimen>
+    <dimen name="margin_25dp">25dp</dimen>
     <dimen name="app_border">20dp</dimen>
 
     <dimen name="header_font_size">20sp</dimen>
     <dimen name="regular_font_size">18sp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
 </resources>

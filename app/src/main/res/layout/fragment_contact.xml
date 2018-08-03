@@ -7,49 +7,64 @@
     android:padding="@dimen/app_border"
     tools:context="com.example.asus.yarafirstproject.AboutFragment">
 
-    <!-- TODO make links clickable -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contact_developer"
         android:textSize="@dimen/header_font_size"
         android:textStyle="bold"
-        android:layout_marginBottom="@dimen/app_border"/>
+        android:layout_margin="@dimen/app_border"/>
 
-    <TextView
-        android:layout_width="match_parent"
+    <GridLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_mail"
-        android:text="@string/developer_email"
-        android:padding="@dimen/app_border"
-        android:drawablePadding="@dimen/app_border"
-        />
+        android:layout_margin="@dimen/app_border"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_github_character"
-        android:text="@string/developer_github"
-        android:padding="@dimen/app_border"
-        android:drawablePadding="@dimen/app_border"
-        />
+        <ImageButton
+            android:id="@+id/developer_github_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_github_character"
+            android:background="@drawable/round_corners"
+            android:contentDescription="@string/developer_github"
+            android:padding="@dimen/margin_25dp"
+            android:layout_margin="@dimen/margin_15dp"
+            />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_linkedin"
-        android:text="@string/developer_linkedin"
-        android:padding="@dimen/app_border"
-        android:drawablePadding="@dimen/app_border"
-        />
+        <ImageButton
+            android:id="@+id/developer_email_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_mail"
+        android:background="@drawable/round_corners"
+        android:contentDescription="@string/developer_email"
+        android:padding="@dimen/margin_25dp"
+        android:layout_margin="@dimen/margin_15dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_telegram_logo"
-        android:text="@string/developer_telegram"
-        android:padding="@dimen/app_border"
-        android:drawablePadding="@dimen/app_border"
-        />
+        <ImageButton
+            android:id="@+id/developer_linkedin_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15dp"
+            android:background="@drawable/round_corners"
+            android:contentDescription="@string/developer_linkedin"
+            android:padding="@dimen/margin_25dp"
+            android:src="@drawable/ic_linkedin" />
+
+        <ImageButton
+            android:id="@+id/developer_telegram_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15dp"
+            android:background="@drawable/round_corners"
+            android:contentDescription="@string/developer_github"
+            android:padding="@dimen/margin_25dp"
+            android:src="@drawable/ic_telegram_logo" />
+    </GridLayout>
+
 
 </LinearLayout>

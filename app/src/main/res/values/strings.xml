@@ -19,10 +19,10 @@
     <string name="about_text">نرگس صادقی \n کارآموز برنامه نویسی اندروید شرکت یارا \n تابستان سال 1397</string>
     <string name="show_form_activity">فرم</string>
 
-    <string name="developer_email">nargessadeghi@ut.ac.ir</string>
-    <string name="developer_github">github.com/NaarGes</string>
-    <string name="developer_linkedin">linkedin.com/in/nargessadeghi</string>
-    <string name="developer_telegram">t.me/NnargessS</string>
+    <string name="developer_email">mailto:nargessadeghi@ut.ac.ir?subject=Contact%20to%20Yaratube%20developer"</string>
+    <string name="developer_github">https://github.com/NaarGes</string>
+    <string name="developer_linkedin">https://www.linkedin.com//in/nargessadeghi</string>
+    <string name="developer_telegram">https://t.me/NnargessS</string>
 
     <string name="yara_logo">Yara Logo</string>
     <string name="contact_developer">ارتباط با توسعه دهنده</string>
