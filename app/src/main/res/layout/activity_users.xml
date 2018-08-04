@@ -4,14 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.asus.yarafirstproject.retrofit.UsersActivity"
-    android:orientation="vertical"
-    android:id="@+id/users_content">
+    android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycler_view">
+        android:id="@+id/user_post_fragments_content"/>
 
-    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
