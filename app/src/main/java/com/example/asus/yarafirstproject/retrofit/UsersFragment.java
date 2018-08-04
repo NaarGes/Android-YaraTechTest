@@ -32,7 +32,7 @@ public class UsersFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_users, container, false);
 
-        recyclerView = root.findViewById(R.id.recycler);
+        recyclerView = root.findViewById(R.id.users_recycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(container.getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);

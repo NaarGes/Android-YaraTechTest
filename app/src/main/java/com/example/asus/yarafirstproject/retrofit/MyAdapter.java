@@ -33,6 +33,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.userName.setText(allUsersList.get(position).getName());
+        holder.userEmail.setText(allUsersList.get(position).getEmail());
     }
 
     @Override
@@ -43,11 +44,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         private TextView userName;
+        private TextView userEmail;
 
         MyViewHolder(View itemView) {
 
             super(itemView);
             userName = itemView.findViewById(R.id.user_name_item);
+            userEmail = itemView.findViewById(R.id.user_email_item);
         }
     }
 }
