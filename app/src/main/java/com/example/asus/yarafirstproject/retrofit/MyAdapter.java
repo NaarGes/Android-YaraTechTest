@@ -1,6 +1,5 @@
 package com.example.asus.yarafirstproject.retrofit;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,11 +15,11 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private List<User> allUsersList;
-    private LayoutInflater layoutInflater;
+    private OnRecyclerViewClickListener listener;
 
-    public MyAdapter(Context context,List<User> dataList){
+    public MyAdapter(List<User> dataList, OnRecyclerViewClickListener listener){
         this.allUsersList = dataList;
-        layoutInflater = LayoutInflater.from(context);
+        this.listener = listener;
     }
 
     @NonNull
@@ -34,12 +33,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.userName.setText(allUsersList.get(position).getName());
         holder.userEmail.setText(allUsersList.get(position).getEmail());
+        final int userID = allUsersList.get(position).getId();
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(userID);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return allUsersList.size();
     }
+
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -51,6 +59,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             super(itemView);
             userName = itemView.findViewById(R.id.user_name_item);
             userEmail = itemView.findViewById(R.id.user_email_item);
+
         }
     }
+
+
 }

@@ -43,19 +43,27 @@ public class UsersFragment extends Fragment {
         call.enqueue(new Callback<List<User>>() {
             @Override
             public void onResponse(retrofit2.Call<List<User>> call, Response<List<User>> response) {
-                myAdapter = new MyAdapter(getContext(),response.body());
+
+                myAdapter = new MyAdapter(response.body(), new OnRecyclerViewClickListener() {
+                    @Override
+                    public void onItemClick(int userID) {
+                        ((OnUserClickListener) getActivity()).goToUserPosts(userID);
+                    }
+                });
+
                 recyclerView.setAdapter(myAdapter);
                 RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(container.getContext(), DividerItemDecoration.VERTICAL);
                 recyclerView.addItemDecoration(itemDecoration);
 
-                Log.d("response" ,response.body().toString());
+                Log.d("response", response.body().toString());
             }
             @Override
             public void onFailure(retrofit2.Call<List<User>> call, Throwable t) {
-                Toast.makeText(getContext(),
-                        "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(getContext(),"Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
+
         return root;
     }
 

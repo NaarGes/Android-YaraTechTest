@@ -7,7 +7,7 @@ import android.os.Bundle;
 import com.example.asus.yarafirstproject.R;
 
 
-public class UsersActivity extends AppCompatActivity {
+public class UsersActivity extends AppCompatActivity implements OnUserClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,5 +16,11 @@ public class UsersActivity extends AppCompatActivity {
 
         UsersFragment usersFragment = UsersFragment.newInstance();
         getSupportFragmentManager().beginTransaction().replace(R.id.user_post_fragments_content, usersFragment).commit();
+    }
+
+    @Override
+    public void goToUserPosts(int userId) {
+        PostsFragment postsFragment = PostsFragment.newInstance(userId);
+        getSupportFragmentManager().beginTransaction().replace(R.id.user_post_fragments_content, postsFragment).commit();
     }
 }
