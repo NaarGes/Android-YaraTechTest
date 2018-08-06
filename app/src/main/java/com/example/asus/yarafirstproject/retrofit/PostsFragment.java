@@ -27,7 +27,6 @@ import retrofit2.Response;
 
 public class PostsFragment extends Fragment {
 
-    private int userID;
     private PostAdapter adapter;
     private RecyclerView recyclerView;
 
@@ -42,20 +41,15 @@ public class PostsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        assert getArguments() != null;
-        this.userID = getArguments().getInt("User ID");
-        Log.v("PostFragment", "onViewCreated, user id = " + this.userID);
+        Log.v("PostFragment", "onViewCreated, user id = " + getArguments().getInt("User ID"));
 
         recyclerView = view.findViewById(R.id.post_recycler);
-        Log.v("PostFragment", "onViewCreated, recycler view = "+recyclerView);
-
-        // ---------------- HERE ERROR HAPPENS!
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setHasFixedSize(true);
 
         GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
 
-        retrofit2.Call<List<Post>> call = service.getUserPosts(userID);
+        retrofit2.Call<List<Post>> call = service.getUserPosts(getArguments().getInt("User ID"));
         call.enqueue(new Callback<List<Post>>() {
             @Override
             public void onResponse(retrofit2.Call<List<Post>> call, Response<List<Post>> response) {

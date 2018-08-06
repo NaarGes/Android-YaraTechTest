@@ -16,5 +16,5 @@ public interface GetDataService {
     Call<List<User>> getAllUsers();
 
     @GET("/posts")
-    Call<List<Post>> getUserPosts(@Query("userID") int userId);
+    Call<List<Post>> getUserPosts(@Query("userId") int userId);
 }
